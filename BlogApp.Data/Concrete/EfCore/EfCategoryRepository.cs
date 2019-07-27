@@ -44,5 +44,17 @@ namespace BlogApp.Data.Concrete.EfCore
                 context.SaveChanges();
             }
         }
+
+        public void SaveCategory(Category category)
+        {
+            if (category.CategoryId == 0)
+            {
+                AddCategory(category);
+            }
+            else
+            {
+                UpdateCategory(category);
+            }
+        }
     }
 }

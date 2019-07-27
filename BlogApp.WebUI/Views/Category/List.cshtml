@@ -25,7 +25,7 @@
                             <td>@item.CategoryId</td>
                             <td>@item.Name</td>
                             <td class="text-right">
-                                <a class="btn btn-primary btn-sm" asp-controller="Category" asp-action="Details" asp-route-id="@item.CategoryId"> Details</a>
+                                <a class="btn btn-primary btn-sm" asp-controller="Category" asp-action="AddOrUpdate" asp-route-id="@item.CategoryId"> Details</a>
                                 <a class="btn btn-danger btn-sm" asp-controller="Category" asp-action="Delete" asp-route-id="@item.CategoryId"> Delete</a>
                             </td>
                         </tr>

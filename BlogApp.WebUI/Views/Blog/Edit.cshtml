@@ -1,0 +1,36 @@
+﻿@model BlogApp.Entity.Blog
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-3">
+    <h1>Create Blog</h1>
+    <br />
+    <form asp-controller="Blog" asp-action="Edit" method="post">
+       <input type="hidden" asp-for="BlogId"/>
+        <div class="form-group">
+            <label asp-for="Name">Title</label>
+            <input asp-for="Name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">Description</label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label asp-for="Body">Body</label>
+            <textarea asp-for="Body" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label asp-for="Image">Image</label>
+            <input asp-for="Image" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryId">CategoryId</label>
+            <select class="form-control" asp-for="CategoryId" asp-items="ViewBag.Categories">
+                <option disabled selected value="">Select Category</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+

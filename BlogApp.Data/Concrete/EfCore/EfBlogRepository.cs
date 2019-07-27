@@ -1,8 +1,6 @@
 ﻿using BlogApp.Data.Abstract;
 using BlogApp.Entity;
-using System;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
 namespace BlogApp.Data.Concrete.EfCore
 {
@@ -31,8 +29,16 @@ namespace BlogApp.Data.Concrete.EfCore
 
         public void UpdateBlog(Blog model)
         {
-            context.Entry(model).State = EntityState.Modified;
-            context.SaveChanges();
+            var blog = GetById(model.BlogId);
+            if (blog != null)
+            {
+                blog.Name = model.Name;
+                blog.Description = model.Description;
+                blog.CategoryId = model.CategoryId;
+                blog.Image = model.Image;
+
+                context.SaveChanges();
+            }
         }
 
         public void DeleteBlog(int blogId)

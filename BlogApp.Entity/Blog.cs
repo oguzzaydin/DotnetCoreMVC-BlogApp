@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlogApp.Entity
 {
@@ -10,7 +9,8 @@ namespace BlogApp.Entity
         public string Description { get; set; }
         public string Body { get; set; }
         public string Image { get; set; }
-        public DateTime Date { get; set; }
+
+        public DateTime Date { get; set; } = DateTime.Now;
         public bool IsApproved { get; set; }
 
         public int CategoryId { get; set; }

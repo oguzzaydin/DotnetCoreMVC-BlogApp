@@ -1,0 +1,13 @@
+﻿@model BlogApp.Entity.Blog
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1> <b>@Model.Name</b> isimli kaydı silmek istiyor musunuz? </h1>
+
+
+<form asp-controller="Blog" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="BlogId"/>
+    <button type="submit" class="btn btn-primary">Delete</button>
+</form>
+
