@@ -1,6 +1,7 @@
 ﻿@model BlogApp.Entity.Blog
 @{
     ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="container mt-3">
@@ -28,6 +29,18 @@
             <select class="form-control" asp-for="CategoryId" asp-items="ViewBag.Categories">
                 <option disabled selected value="">Select Category</option>
             </select>
+        </div>
+        <div class="form-check">
+            <label asp-for="isHome" class="form-check-label">
+                <input asp-for="isHome" type="checkbox" class="form-check-input"/>
+                Is Home
+            </label>
+        </div>
+        <div class="form-check">
+            <label asp-for="IsApproved" class="form-check-label">
+                <input asp-for="IsApproved" type="checkbox" class="form-check-input" />
+                Is Approved
+            </label>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

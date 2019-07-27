@@ -35,3 +35,8 @@ C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\Razor\
 C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\Razor\Views\Blog\Create.g.cshtml.cs
 C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\Razor\Views\Blog\Edit.g.cshtml.cs
 C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\Razor\Views\Category\AddOrUpdate.g.cshtml.cs
+C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\Razor\Views\Blog\Delete.g.cshtml.cs
+C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\CategoryMenu\Default.g.cshtml.cs
+C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_BlogList.g.cshtml.cs
+C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\Razor\Views\Blog\Index.g.cshtml.cs
+C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\Razor\Views\Blog\Details.g.cshtml.cs

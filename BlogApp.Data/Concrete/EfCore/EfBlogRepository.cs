@@ -36,6 +36,8 @@ namespace BlogApp.Data.Concrete.EfCore
                 blog.Description = model.Description;
                 blog.CategoryId = model.CategoryId;
                 blog.Image = model.Image;
+                blog.isHome = blog.isHome;
+                blog.IsApproved = blog.IsApproved;
 
                 context.SaveChanges();
             }

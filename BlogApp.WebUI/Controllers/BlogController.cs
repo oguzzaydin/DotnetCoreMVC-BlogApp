@@ -1,4 +1,5 @@
-﻿using BlogApp.Data.Abstract;
+﻿using System.Linq;
+using BlogApp.Data.Abstract;
 using BlogApp.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -17,7 +18,7 @@ namespace BlogApp.WebUI.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            return View(_blogRepository.GetAll().Where(i => i.IsApproved).OrderByDescending(i => i.Date));
         }
         public IActionResult List()
         {
@@ -70,6 +71,11 @@ namespace BlogApp.WebUI.Controllers
             _blogRepository.DeleteBlog(id);
             TempData["message"] = $"{id} numaralı kayıt silindi";
             return RedirectToAction("List");
+        }
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            return View(_blogRepository.GetById(id));
         }
     }
 }

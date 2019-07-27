@@ -12,6 +12,7 @@ namespace BlogApp.Entity
 
         public DateTime Date { get; set; } = DateTime.Now;
         public bool IsApproved { get; set; }
+        public bool isHome { get; set; }
 
         public int CategoryId { get; set; }
         public Category Category { get; set; }
