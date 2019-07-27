@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using BlogApp.Data.Abstract;
+using BlogApp.Data.Concrete.EfCore;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +18,9 @@ namespace BlogApp.WebUI
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IBlogRepository, EfBlogRepository>();
+            services.AddTransient<ICategoryRepository, EfCategoryRepository>();
+            services.AddDbContext<BlogContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("BlogApp.WebUI")));
             services.AddMvc();
         }
 
@@ -31,6 +37,8 @@ namespace BlogApp.WebUI
                 {
                     routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
                 });
+
+            SeedData.Seed(app);
         }
     }
 }

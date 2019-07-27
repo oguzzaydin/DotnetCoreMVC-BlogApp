@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<BlogApp.Entity.Blog>
 @{
     ViewData["Title"] = "Index";
 }
@@ -26,50 +26,22 @@
             </ul>
         </div>
         <div class="col-md-9">
-            <div class="card">
-                <img class="card-img-top" src="img/1.jpg" alt="Card image gap" />
-                <div class="card-header">
-                    Featured
+            @foreach (var item in Model)
+            {
+                <div class="card">
+                    <img class="card-img-top" src="img/@item.Image" alt="Card image gap"/>
+                    <div class="card-header">
+                        @item.Name
+                    </div>
+                    <div class="card-block">
+                        <h4 class="card-title">@item.Name</h4>
+                        <p class="card-text">@item.Description</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
                 </div>
-                <div class="card-block">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card mt-2">
-                <img class="card-img-top" src="img/2.jpg" alt="Card image gap" />
-                <div class="card-header">
-                    Featured
-                </div>
-                <div class="card-block">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card mt-2">
-                <img class="card-img-top" src="img/3.jpg" alt="Card image gap" />
-                <div class="card-header">
-                    Featured
-                </div>
-                <div class="card-block">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card mt-2">
-                <img class="card-img-top" src="img/4.jpg" alt="Card image gap" />
-                <div class="card-header">
-                    Featured
-                </div>
-                <div class="card-block">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+            }
+      
+
         </div>
     </div>
 </div>
