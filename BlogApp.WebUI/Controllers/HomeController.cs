@@ -1,0 +1,20 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace BlogApp.WebUI.Controllers
+{
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult List()
+        {
+            return View();
+        }
+        public IActionResult Details()
+        {
+            return View();
+        }
+    }
+}
