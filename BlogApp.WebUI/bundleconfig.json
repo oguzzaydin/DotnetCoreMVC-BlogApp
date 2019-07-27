@@ -3,6 +3,7 @@
     "outputFileName": "wwwroot/css/bundle.css",
     "inputFiles": [
       "wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "wwwroot/lib/font-waesome/css/font-awesome.css",
       "wwwroot/css/style.css"
     ]
   },

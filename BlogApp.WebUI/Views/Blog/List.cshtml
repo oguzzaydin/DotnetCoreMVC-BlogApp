@@ -1,0 +1,60 @@
+﻿@model IEnumerable<BlogApp.Entity.Blog>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<div class="container mt-3">
+    <h1>Blog List</h1>
+    <hr />
+    <div class="row">
+        <div class="col">
+            @if (Model.Count() > 0)
+            {
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Is Approved</th>
+                            <th>Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.BlogId</td>
+                                <td> <img src="img/@item.Image" width="100" /></td>
+                                <td>@item.Name</td>
+                                <td>@item.Date</td>
+                                <td>
+                                    @if (item.IsApproved)
+                                    {
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="fa fa-close" aria-hidden="true"></i>
+                                    }
+                                </td>
+                                <td>@item.Date</td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" asp-controller="Blog" asp-action="Details" asp-route-id="@item.BlogId"> Details</a>
+                                    <a class="btn btn-danger btn-sm" asp-controller="Blog" asp-action="Delete" asp-route-id="@item.BlogId"> Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-danger">Blog Eklenmemiş.</div>
+            }
+        </div>
+    </div>
+</div>

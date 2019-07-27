@@ -30,3 +30,5 @@ C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\BlogAp
 C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\BlogApp.WebUI.csproj.CopyComplete
 C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\BlogApp.WebUI.dll
 C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\BlogApp.WebUI.pdb
+C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\Razor\Views\Blog\List.g.cshtml.cs
+C:\Users\Salih\source\repos\BlogApp\BlogApp.WebUI\obj\Debug\netcoreapp2.2\Razor\Views\Category\List.g.cshtml.cs
