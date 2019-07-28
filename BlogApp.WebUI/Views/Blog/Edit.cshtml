@@ -3,12 +3,16 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@section scripts {
+    <script src="~/lib/ckeditor/ckeditor.js"></script>
+    <script>CKEDITOR.replace("Body")</script>
+}
 
 <div class="container mt-3">
     <h1>Create Blog</h1>
     <br />
     <form asp-controller="Blog" asp-action="Edit" method="post">
-       <input type="hidden" asp-for="BlogId"/>
+        <input type="hidden" asp-for="BlogId" />
         <div class="form-group">
             <label asp-for="Name">Title</label>
             <input asp-for="Name" class="form-control">
@@ -25,24 +29,24 @@
             <label asp-for="Image">Image</label>
             <input asp-for="Image" class="form-control">
         </div>
-       <div class="form-group">
-           <label asp-for="CategoryId">CategoryId</label>
-           <select class="form-control" asp-for="CategoryId" asp-items="ViewBag.Categories">
-               <option disabled selected value="">Select Category</option>
-           </select>
-       </div>
-       <div class="form-check">
-           <label asp-for="isHome" class="form-check-label">
-               <input asp-for="isHome" type="checkbox" class="form-check-input"/>
-               Is Home
-           </label>
-       </div>
-       <div class="form-check">
-           <label asp-for="IsApproved" class="form-check-label">
-               <input asp-for="IsApproved" type="checkbox" class="form-check-input" />
-               Is Approved
-           </label>
-       </div>
+        <div class="form-group">
+            <label asp-for="CategoryId">CategoryId</label>
+            <select class="form-control" asp-for="CategoryId" asp-items="ViewBag.Categories">
+                <option disabled selected value="">Select Category</option>
+            </select>
+        </div>
+        <div class="form-check">
+            <label asp-for="isHome" class="form-check-label">
+                <input asp-for="isHome" type="checkbox" class="form-check-input" />
+                Is Home
+            </label>
+        </div>
+        <div class="form-check">
+            <label asp-for="IsApproved" class="form-check-label">
+                <input asp-for="IsApproved" type="checkbox" class="form-check-input" />
+                Is Approved
+            </label>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

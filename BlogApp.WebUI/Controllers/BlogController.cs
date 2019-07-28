@@ -16,9 +16,15 @@ namespace BlogApp.WebUI.Controllers
             _blogRepository = blogRepository;
             _categoryRepository = categoryRepository;
         }
-        public IActionResult Index()
+        public IActionResult Index(int? id, string q)
         {
-            return View(_blogRepository.GetAll().Where(i => i.IsApproved).OrderByDescending(i => i.Date));
+            var query = _blogRepository.GetAll().Where(i => i.IsApproved);
+            if (id != null)
+                query = query.Where(p => p.CategoryId == id);
+            if (!string.IsNullOrEmpty(q))
+                query = query.Where(i => i.Name.Contains(q) || i.Description.Contains(q) || i.Body.Contains(q));
+               
+            return View(query.OrderByDescending(x => x.Date));
         }
         public IActionResult List()
         {
